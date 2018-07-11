@@ -1,0 +1,61 @@
+.light1{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 0px;
+}
+
+.light2{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 250rpx;
+}
+.light3{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 500rpx;
+}
+.light4{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 0rpx;
+  top: 300rpx;
+}
+.light5{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 250rpx;
+  top: 300rpx;
+}
+.light6{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 500rpx;
+  top: 300rpx;
+}
+.light7{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 0rpx;
+  top: 600rpx;
+}
+.light8{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 250rpx;
+  top: 600rpx;
+}
+.light9{
+  height:270rpx;
+  width:250rpx;
+  opacity: 0;
+  left: 500rpx;
+  top: 600rpx;
+}

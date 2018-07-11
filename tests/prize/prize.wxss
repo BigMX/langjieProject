@@ -1,0 +1,20 @@
+.firstColumn{
+  position: fixed;
+  background:paleturquoise;
+  top:200rpx;
+  left:0rpx;
+}
+ .SecondColumn{
+  position: fixed;
+  background:antiquewhite;
+  top:100rpx;
+  left:400rpx;
+} 
+.container{
+  height:1200rpx;
+}
+.title{
+  position: fixed;
+  top:0rpx;
+  left:0rpx;
+}

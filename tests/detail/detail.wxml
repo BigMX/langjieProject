@@ -1,0 +1,15 @@
+
+<view>
+<button style="margin:30rpx;" bindtap="chooseimage">获取图片</button>
+<image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit" style="width: 100%; height: 450rpx" />
+
+<button bindtap="upload">上传</button>
+</view>
+
+<view>
+<input class="input" bindinput="name" placeholder="请输入奖品名" />
+</view>
+<input class="input" bindinput="price" placeholder="请输入奖品价格" />
+<input class="input" bindinput="round" placeholder="请输入奖品轮次" />
+<input class="input" bindinput="Class" placeholder="请输入奖品等次" />
+<button bindtap="add">加入</button>

@@ -1,0 +1,27 @@
+<view class="container" style="background-image: url('https://s2.smu.edu/~bocel/363042902.jpg')">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto" style="margin-bottom:100rpx">
+    <text class="user-motto" >{{motto}}</text>
+  </view>
+
+
+
+
+        <button style="color: lightskyblue" class = 'ab' bindtap='abc'>\n\n我要查看</button>
+
+        <button class = 'bc' bindtap='abcd'>\n\n我要加入</button>
+     
+        <button class = 'cd' bindtap='abcde'>\n\n小游戏</button>
+
+        <button class = 'de' bindtap='abcdef'>\n\n我要返回</button>
+
+        <button class = 'ef' bindtap='abcdefg'>\n\n奖项查看</button>
+
+        <button class = 'fg' bindtap='abcdefgh'>\n\n偷偷抽奖</button>        
+</view>

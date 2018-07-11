@@ -1,0 +1,3 @@
+<view class='mydata'>
+    <text class="sign">{{myText}}</text>
+</view>

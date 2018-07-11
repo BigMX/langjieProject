@@ -1,0 +1,25 @@
+<view class="container" style="background-image: url('https://s2.smu.edu/~bocel/363042902.jpg')">
+
+<view class="firstColumn">
+<radio-group class = 'roundRadio' bindchange="listenerRadioGroup">
+<!--label通常与radio和checkbox结合使用-->
+    <label style="display: relative" wx:for-items="{{group}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+</radio-group>
+<!-- <text>{{prizes}}</text> -->
+
+<view class = "prize" wx:for="{{t}}" decode="{{true}}">
+<view wx:if="{{prizeVis[index]}}">
+  <text class = "text">{{item.prize_name}}|价格:{{item.prize_price}}￥|中奖者：{{item.people_name}}</text>
+  <image class="prize_image" src="{{item.prize_url}}"></image>
+  <button class = "chou" bindtap="chou" data-testId="{{index}}" wx:if="{{!item.people_id}}">抽！</button>
+    <button class = "buchou" bindtap="buchou" data-testId="{{index}}" wx:if="{{item.people_id}}">没得抽!</button>
+  
+  </view>
+</view> 
+
+</view>
+
+
+</view>

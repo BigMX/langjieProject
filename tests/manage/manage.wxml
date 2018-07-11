@@ -1,0 +1,36 @@
+<view class="container" style="background-image: url('https://s2.smu.edu/~bocel/363042902.jpg')">
+
+<view class="firstColumn">
+<radio-group class = 'roundRadio' bindchange="listenerRadioGroup">
+<!--label通常与radio和checkbox结合使用-->
+    <label style="display: relative" wx:for-items="{{group}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+</radio-group>
+<button class = "tian" bindtap="add">添加一个礼品</button>
+<!-- <text>{{prizes}}</text> -->
+
+<view class = "prize" wx:for="{{t}}" decode="{{true}}">
+<view wx:if="{{prizeVis[index]}}">
+  <text class = "text">第{{index+1}}个奖品|{{item.prize_name}}</text>
+  <image class="prize_image" src="{{item.prize_url}}"></image>
+  <button class = "detail" bindtap="detail" data-testId="{{index}}">查看与修改</button>
+  <view class="change" wx:if="{{h[index]}}">
+  <text>奖品名：</text>
+    <input class="input" bindinput="name" placeholder="{{t[index].prize_name}}" />
+      <text>奖品价格：</text>
+    <input class="input" bindinput="price" placeholder="{{t[index].prize_price}}" />
+      <text>奖品轮次：</text>
+    <input class="input" bindinput="round" placeholder="{{t[index].prize_round}}" />
+      <text>奖品等次：</text>
+    <input class="input" bindinput="Class" placeholder="{{t[index].prize_class}}" />
+    <button bindtap="update" data-testId="{{index}}">修改</button>
+    <button bindtap="Delete" data-testId="{{index}}">删除</button>
+  </view>
+  </view>
+</view> 
+
+</view>
+
+
+</view>

@@ -1,0 +1,22 @@
+<radio-group class = 'roundRadio' bindchange="listenerRadioGroup">
+<!--label通常与radio和checkbox结合使用-->
+    <label style="display: flex" wx:for-items="{{group}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+</radio-group>
+
+<radio-group class = 'prizeRadio' bindchange="listenerRadioPrize">
+<!--label通常与radio和checkbox结合使用-->
+    <label style="display: flex" wx:for-items="{{prize}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+</radio-group>
+
+<text>{{PrizeDetail}}</text>
+
+<view wx:if="{{isDrawn==true}}">
+<button class='buchou' bindtap='nullButton'>无法抽取</button>
+</view> 
+<view wx:if="{{isDrawn==false}}">
+<button class='chou' bindtap='chouyixia'>抽他</button>
+</view>

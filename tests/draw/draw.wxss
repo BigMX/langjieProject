@@ -1,0 +1,46 @@
+radio .wx-radio-input{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;
+   height: 40rpx;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+.prizeRadio{
+   border: none;
+   background: paleturquoise;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+.prizeRadio::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+.roundRadio{
+   border: none;
+   background: palegreen;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+
+.buchou{
+  position: fixed;
+  align-content: center;
+  background: gray;
+  top:500rpx;
+  left:300rpx;
+}
+
+.chou{
+  position: fixed;
+  align-content: center;
+  background: orange;
+    top:500rpx;
+  left:300rpx;
+}

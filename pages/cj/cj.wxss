@@ -1,0 +1,30 @@
+.firstColumn{
+  position: absolute;
+
+}
+
+.container{
+  height:10000rpx;
+}
+.title{
+  position: relative;
+  top:0rpx;
+  left:0rpx;
+}
+.prize{
+}
+.text{
+  margin-left:100rpx;
+}
+
+.buchou{
+  align-content: center;
+  background: gray;
+
+}
+
+.chou{
+  align-content: center;
+  background: orange;
+
+}

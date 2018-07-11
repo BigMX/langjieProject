@@ -1,0 +1,71 @@
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 25%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.tt{
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.space{
+  margin-bottom: 20rpx;
+}
+.ab{
+  height: 100rpx;
+  width:600rpx;
+  color: white;
+  background-color: aliceblue;
+}
+.ab::after{
+  border:none;
+}
+.bc{
+  height: 100rpx;
+  width:600rpx;
+  color: white;
+  background-color:grey;
+}
+.bc::after{
+  border:none;
+}
+.cd{
+  height: 100rpx;
+  width:600rpx;
+  color: grey;
+  background-color:snow;
+}
+.cd::after{
+  border:none;
+}
+.de{
+  height: 100rpx;
+  width:600rpx;
+  color: wheat;
+  background-color:cadetblue;
+}
+.de::after{
+  border:none;
+}
+
+.ef{
+  height: 100rpx;
+  width:600rpx;
+  color: green;
+  background-color:mintcream;
+}
+.ef::after{
+  border:none;
+}

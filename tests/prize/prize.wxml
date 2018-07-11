@@ -1,0 +1,22 @@
+<view class="container" style="background-image: url('https://s2.smu.edu/~bocel/363042902.jpg')">
+
+<text class = "title" decode="{{true}}">ID&emsp;|&emsp;轮&emsp;|&emsp;奖品名&emsp;|&emsp;价格&emsp;|&emsp;获奖人</text>
+<view class="firstColumn">
+<!-- <text>{{prizes}}</text> -->
+
+<view wx:for="{{t}}" decode="{{true}}">
+  {{index}}　|{{item.prize_round}}|{{item.prize_name}}|{{item.prize_price}}|
+</view> 
+
+</view>
+<view class="SecondColumn">
+<view wx:for="{{t}}">
+  {{item.people_name}}
+</view> 
+</view>
+
+  <button class="add" bindtap="gotoManage">管理!</button>
+    <button class="update" bindtap="gotoManage">管理!</button>
+      <button class="delete" bindtap="gotoManage">管理!</button>
+
+</view>

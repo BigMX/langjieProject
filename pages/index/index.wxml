@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container" style="background-image: url('https://s2.smu.edu/~bocel/363042902.jpg')">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="testfield">
+  <button class="realtest" bindtap="gotoTest">test!</button>
+  <button class="nosorealtest" bindtap="gotoManage">管理!</button>
+    <button class="veryrealtest" bindtap="gotoCj">抽奖!</button>
+</view>
+</view>
+<!-- <view>
+<canvas style="width: 300px; height: 200px;" canvas-id="myCanvas"></canvas>  
+<button bindtap='click'>canvas绘图</button>  
+<button bindtap='click2'>canvas绘2图</button>  
+</view>
+       -->
+<!-- 
+  <view class="icon-box">
+    <icon class="icon-box-img" type="success" size="93"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">成功</view>
+      <view class="icon-box-desc">用于表示操作顺利完成</view>
+    </view>
+  </view> -->

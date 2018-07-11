@@ -1,0 +1,25 @@
+.firstColumn{
+  position: absolute;
+
+}
+
+.container{
+  height:10000rpx;
+}
+.title{
+  position: relative;
+  top:0rpx;
+  left:0rpx;
+}
+.prize{
+}
+.text{
+  margin-left:100rpx;
+}
+.tian{
+    position: relative;
+    margin-right: 100rpx;
+}
+.detail{
+  margin-right: 100rpx;
+}

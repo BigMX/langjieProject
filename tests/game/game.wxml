@@ -1,0 +1,18 @@
+<text style="color=cornflowerblue">游戏目标：熄灭九个方块\n</text>
+<text>{{description}}</text>
+   <canvas style="width: {{width}}; height: {{width}};" canvas-id="gameCanvas">
+      <button class = 'light1' bindtap='light_1' style="position:fixed;"></button>
+   <button class = 'light2' bindtap='light_2' style="position:fixed;"></button>
+       <button class = 'light3' bindtap='light_3' style="position:fixed;"></button>
+   <button class = 'light4' bindtap='light_4' style="position:fixed;"></button>
+   <button class = 'light5' bindtap='light_5' style="position:fixed;"></button>
+   <button class = 'light6' bindtap='light_6' style="position:fixed;"></button>
+   <button class = 'light7' bindtap='light_7' style="position:fixed;"></button>
+   <button class = 'light8' bindtap='light_8' style="position:fixed;"></button>
+   <button class = 'light9' bindtap='light_9' style="position:fixed;"></button>  
+</canvas>  
+
+<button class='restart' bindtap='restart_button'>Restart</button>
+
+ 
+

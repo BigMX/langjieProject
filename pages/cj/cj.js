@@ -10,14 +10,9 @@ Page({
       { name: 3, value: 'ThirdGroup' },
     ],
     currentGroup: 1,
-    prizeAmount: 1,
     t: [],
     h: [],
     prizeVis: [],
-    prizeName: "",
-    prizePrice: 0.0,
-    prizeClass: 0,
-    prizeRound: 0,
     curr: -1
   },
 
@@ -41,27 +36,8 @@ Page({
       prizeVis: vis
     })
   },
-  name: function (e) {
-    this.setData({
-      prizeName: e.detail.value
-    })
-  },
-  price: function (e) {
-    this.setData({
-      prizePrice: e.detail.value
-    })
-  },
-  round: function (e) {
-    this.setData({
-      prizeRound: e.detail.value
-    })
-  },
-  Class: function (e) {
-    this.setData({
-      prizeClass: e.detail.value
-    })
-    console.log(e.detail.value);
-  },
+
+
   onLoad: function (options) {
     var that = this;
     wx.request({
@@ -95,15 +71,6 @@ Page({
           h: temp,
           prizeVis: vis,
         })
-        // console.log(res);
-        // p += "轮|\t" + "等|\t" + "奖项|" + "获奖者" + "\n"
-        // for (var i in res.data) {
-        //   p = p + res.data[i].prize_round + "　|" + res.data[i].prize_class + "　|" + res.data[i].prize_name + "|" + res.data[i].people_name + "\n";
-        // }
-        // that.setData({
-        //   t: res.data,
-        //   prizes: p
-        // })
       }
     })
   },
@@ -131,77 +98,8 @@ Page({
     })
 
   },
-  detail: function (event) {
-    console.log(event.currentTarget.dataset.testid)
-    var temp = this.data.h
-    temp[event.currentTarget.dataset.testid] = (temp[event.currentTarget.dataset.testid] == false) ? true : false;
-    this.setData({
-      h: temp
-    })
-    console.log(this.data.h);
-    var id = event.currentTarget.dataset.testid;
-    this.setData({
-      curr: id,
-      prizeName: this.data.t[id].prize_name,
-      prizePrice: this.data.t[id].prize_price,
-      prizeRound: this.data.t[id].prize_round,
-      prizeClass: this.data.t[id].prize_class
-    })
-  },
 
-  add() {
-    wx.redirectTo({
-      url: '../detail/detail',
-    })
-  },
 
-  update() {
-    var that = this;
-    wx.request({
-      url: 'http://ec2-18-221-98-201.us-east-2.compute.amazonaws.com:3000/updatePrize',
-      data: {
-        "prize_name": that.data.prizeName,
-        "prize_price": that.data.prizePrice,
-        "prize_class": that.data.prizeClass,
-        "prize_round": that.data.prizeRound,
-        'prize_id': that.data.t[that.data.curr].prize_id
-      },
-      method: 'PUT',
-      success: function (res) {
-        console.log('add success');
-      },
-      fail: function (res) {
-        console.log('add fail');
-      },
-      complete: function (res) {
-        console.log('add complete');
-      }
-    })
-    var temp = this.data.h
-    var prizeList = this.data.t
-    prizeList[this.data.curr].prize_name = this.data.prizeName;
-    prizeList[this.data.curr].prize_price = this.data.prizePrice;
-    prizeList[this.data.curr].prize_class = this.data.prizeClass;
-    prizeList[this.data.curr].prize_round = this.data.prizeRound;
-    temp[this.data.curr] = (temp[this.data.curr] == false) ? true : false;
-    var vis = [];
-    for (var i in prizeList) {
-      if (prizeList[i].prize_round == this.data.currentGroup) {
-        vis.push(true);
-      } else {
-        vis.push(false);
-      }
-    }
-    this.setData({
-      h: temp,
-      t: prizeList,
-      prizeVis: vis
-    })
-  },
-
-  Delete: function () {
-
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

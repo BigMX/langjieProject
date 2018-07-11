@@ -147,7 +147,7 @@ Page({
     })
   },
   gotoManage(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../../tests/manage/manage',
     })
   },

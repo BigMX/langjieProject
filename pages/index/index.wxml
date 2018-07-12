@@ -11,22 +11,9 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <view class="testfield">
-  <button class="realtest" bindtap="gotoTest">test!</button>
-  <button class="nosorealtest" bindtap="gotoManage">管理!</button>
-    <button class="veryrealtest" bindtap="gotoCj">抽奖!</button>
+  <button class="realtest" bindtap="gotoTest">进入会场!</button>
+  <text wx:if="{{!isMember}}">您还不是会员！无法参与抽奖！</text>
+  <button class="nosorealtest" bindtap="gotoManage" wx:if="{{isManager}}">管理!</button>
+    <button class="veryrealtest" bindtap="gotoCj" wx:if="{{isDrawer}}">抽奖!</button>
 </view>
 </view>
-<!-- <view>
-<canvas style="width: 300px; height: 200px;" canvas-id="myCanvas"></canvas>  
-<button bindtap='click'>canvas绘图</button>  
-<button bindtap='click2'>canvas绘2图</button>  
-</view>
-       -->
-<!-- 
-  <view class="icon-box">
-    <icon class="icon-box-img" type="success" size="93"></icon>
-    <view class="icon-box-ctn">
-      <view class="icon-box-title">成功</view>
-      <view class="icon-box-desc">用于表示操作顺利完成</view>
-    </view>
-  </view> -->

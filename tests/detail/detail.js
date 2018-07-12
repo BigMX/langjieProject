@@ -43,7 +43,7 @@ Page({
     var currPage = pages[pages.length - 1];
     var prevPage = pages[pages.length - 2];
     prom.wxPromisify(wx.request)({
-      url: 'http://ec2-18-221-98-201.us-east-2.compute.amazonaws.com:3000/addPrize',
+      url: 'https://api.langjie.com/proxy/wxAddPrize',
       data: { 
         "prize_name": that.data.prizeName,
         "prize_price":that.data.prizePrice, 

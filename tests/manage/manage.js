@@ -60,7 +60,6 @@ Page({
     this.setData({
       prizeClass: e.detail.value
     })
-    console.log(e.detail.value);
   },
   onLoad: function (options) {
     var that = this;
@@ -94,15 +93,6 @@ Page({
           h:temp,
           prizeVis:vis
         })
-        // console.log(res);
-        // p += "轮|\t" + "等|\t" + "奖项|" + "获奖者" + "\n"
-        // for (var i in res.data) {
-        //   p = p + res.data[i].prize_round + "　|" + res.data[i].prize_class + "　|" + res.data[i].prize_name + "|" + res.data[i].people_name + "\n";
-        // }
-        // that.setData({
-        //   t: res.data,
-        //   prizes: p
-        // })
       }
     })
   },

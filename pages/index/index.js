@@ -1,57 +1,88 @@
 var prom = require("../../utils/prom.js")
 const app = getApp()
-var find = false;
+var find=false;
+
+var managerList = ["oathZ1A0Iddyj-qqpL6fl8OVBAFA"]
+var DrawerList = ['oathZ1A0Iddyj-qqpL6fl8OVBAFA']
+var tempMember=false;
 var unionid;
-wx.login({
-  success: function (res) {
-    var code = res.code; //返回code
-    console.log(code);
-    var openid;
-    var token;
-    var secret="655d3bf13a70671966abdd4d2c6be206";
-    console.log(code);
-    var URL = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx238ca91cc7a15764&secret=655d3bf13a70671966abdd4d2c6be206' + '&js_code=' + code + '&grant_type=authorization_code';
-    console.log(URL);
-    wx.request({
-      url: "https://api.langjie.com/proxy/wxGetUserInfoByCode",
-      data: { 
-        appid:'wx238ca91cc7a15764',
-        secret:'655d3bf13a70671966abdd4d2c6be206',
-        js_code:code,
-        grant_type:'authorized_code'
-      },
-      header: {
-      },
-      fail:function(res){
-        console.log("fail");
-      },
-      success: function (res) {
-      },
-      complete:function(res){
-        console.log(res);
-        openid = res.data.openid //返回openid
-        unionid=res.data.unionid
-        console.log('openid为' + openid);
-      }
-    })
-  }
-})
+var openid;
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '欢迎进入签到小程序',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    d:"s"
+    d:"s",
+    isManager: false,
+    isDrawer: false,
+    isMember: true
   },
-  //事件处理函数
+
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
 
+  onLoad: function () {
+    var that =this;
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        prom.wxPromisify(wx.request)({
+          url: "https://api.langjie.com/proxy/wxGetUserInfoByCode",
+          data: {
+            appid: 'wx238ca91cc7a15764',
+            secret: '655d3bf13a70671966abdd4d2c6be206',
+            js_code: code,
+            grant_type: 'authorized_code'
+          },
+          header: {
+          },
+          fail: function (res) {
+            console.log("login Fail");
+          },
+          success: function (res) {
+            console.log('login Success')
+          },
+          complete: function (res) {
+            openid = res.data.openid
+            unionid = res.data.unionid
+            for (var i=0;i<managerList.length;i++){
+              if(managerList[i]==unionid){
+                that.setData({
+                  isManager: true
+                })
+              }
+            }
+            for (var i = 0; i < DrawerList.length; i++) {
+              if (DrawerList[i] == unionid) {
+                that.setData({
+                  isDrawer: true
+                })
+              }
+            }
+          }
+        }).then(function (res) {
+          wx.request({
+            url: 'https://api.langjie.com/wx/checkMemberExist?unionid=' + unionid,
+            method: 'GET',
+            success: function (res) {
+            },
+            fail: function (res) {
+            },
+            complete: function (res) {
+              if (res.data.code == -1) {
+                that.setData({
+                  isMember : false
+                })
+              }
+            }
+          })
+        })
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -77,6 +108,7 @@ Page({
         }
       })
    }
+
   },
   gotoAlbum() {
     wx.navigateTo({
